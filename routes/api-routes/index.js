@@ -4,12 +4,12 @@ const uniqid = require('uniqid')
 const router = require('express').Router()
 const notesArray = require("../../db/db.json")
 
-router.get('/notes', (req, res) => {
+router.get('/api/notes', (req, res) => {
     let results = notesArray
     res.json(results);
 })
 
-router.post('/notes', (req, res) => {
+router.post('/api/notes', (req, res) => {
     const note = req.body
     req.body.id = uniqid.time();
     console.log('req.body:', req.body)
